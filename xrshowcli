@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+
+# Author : Hemant Sharma
+
+import sys
+import xrshow
+import argparse
+
+
+if __name__ == "__main__":
+    # Create a parser object to handle command-line arguments
+    parser = argparse.ArgumentParser(
+        description="Display show command output on cisco xr",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+
+    # Add an argument for the node hostname
+    parser.add_argument("-n", help="node hostname")
+
+    # Add an argument for the show commands, which can be one or more and separated by whitespace
+    parser.add_argument(
+        "-c",
+        nargs="+",
+        help="show cmds, if more than one, then whitespace separated please",
+    )
+
+    # Parse the arguments and store them in a variable
+    args = parser.parse_args()
+
+    # Call the xrshow function with the node hostname and the show commands as parameters
+    xrshow.xrshow(args.n, args.c)
