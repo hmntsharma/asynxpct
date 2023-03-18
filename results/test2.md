@@ -1,3 +1,4 @@
+```ruby
 (vntdvops) lab@netdevops:~/asyncxpct$ grep -i sema asyncxpct.py
     limit = asyncio.Semaphore(10)
 (vntdvops) lab@netdevops:~/asyncxpct$ ./asyncxpct.py
@@ -386,4 +387,4 @@ Total adjacency count: 2
 --------------------------------------------------------------------------------
 Time taken for the program run: 1.46 seconds
 (vntdvops) lab@netdevops:~/asyncxpct$
-
+```
